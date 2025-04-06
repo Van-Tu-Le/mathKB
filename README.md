@@ -2,7 +2,6 @@
 
 MathKB is a local web application designed to help you organize, search, and manage your mathematics knowledge. With support for LaTeX rendering, comprehensive tag management, and robust search capabilities, MathKB makes it easy to build your personal repository of mathematical concepts, theorems, proofs, and notes.
 
-![MathKB Screenshot](https://via.placeholder.com/800x450.png?text=MathKB+Screenshot)
 
 ## Features
 
