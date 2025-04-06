@@ -26,7 +26,7 @@ MathKB is a local web application designed to help you organize, search, and man
 
 1. Clone the repository or download the files
    ```bash
-   git clone https://github.com/yourusername/mathkb.git
+   git clone https://github.com/Van-Tu-Le/mathKB.git
    cd mathkb
    ```
 
@@ -236,7 +236,7 @@ MathKB supports three import formats:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is free to use!!!!
 
 ## Acknowledgments
 
