@@ -1,0 +1,94 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathKB-Local</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
+      });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MathKB-Local</h1>
+            <p>Your Personal Mathematics Knowledge Base</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h2>Actions</h2>
+                    <button id="new-item-btn">Add New Item</button>
+                    <div class="export-section">
+                        <h3>Export</h3>
+                        <button id="export-json-btn">JSON</button>
+                        <button id="export-txt-btn">TXT</button>
+                        <button id="export-csv-btn">CSV</button>
+                    </div>
+                    <!-- Import section will be added dynamically in JavaScript -->
+                </div>
+                
+                <div class="sidebar-section">
+                    <h2>Filter by Tags</h2>
+                    <div class="tag-filter">
+                        <input type="text" id="tag-search" placeholder="Search tags...">
+                        <div id="tag-list" class="tag-list"></div>
+                        <div id="active-filters" class="active-filters"></div>
+                        <button id="clear-filters-btn">Clear Filters</button>
+                        <!-- Advanced Tag Filter button will be added dynamically in JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h2>Search Content</h2>
+                    <input type="text" id="content-search" placeholder="Search in content...">
+                    <!-- Advanced Search button will be added dynamically in JavaScript -->
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <div id="items-list" class="items-list">
+                    <!-- Knowledge items will be displayed here -->
+                </div>
+                
+                <div id="item-view" class="item-view hidden">
+                    <!-- Selected item details will be displayed here -->
+                </div>
+                
+                <div id="item-form" class="item-form hidden">
+                    <h2 id="form-title">Add New Knowledge Item</h2>
+                    <textarea id="content-input" placeholder="Enter mathematical content with LaTeX (e.g., $\sum 1/n^\alpha$)"></textarea>
+                    
+                    <div class="tags-input-container">
+                        <label for="tags-input">Tags:</label>
+                        <input type="text" id="tags-input" placeholder="Enter tags separated by commas">
+                        <div id="tags-suggestions" class="tags-suggestions"></div>
+                    </div>
+                    
+                    <div class="preview-section">
+                        <h3>Preview</h3>
+                        <div id="content-preview" class="content-preview"></div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button id="save-item-btn">Save</button>
+                        <button id="cancel-item-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
